@@ -112,8 +112,7 @@ void MedianFilter(const Mat& input, Mat& output, int N){
     copyMakeBorder( input, input_padding, padding_size , padding_size, padding_size, padding_size, BORDER_REFLECT);
     
     //Move window through all elements of the image
-    for (int column_index = 0; column_index < input.cols; column_index++){
-        
+    for (int column_index = 0; column_index < input.cols; column_index++)
         for (int row_index= 0; row_index < input.rows ; row_index++){
             
             int window [N*N]; // window array N*N: filter lenght
@@ -135,7 +134,7 @@ void MedianFilter(const Mat& input, Mat& output, int N){
             output.at<uchar>(row_index, column_index) =  FindMedium(window, N*N);
             
         }
-    }
+    
 }
 
 //     Finding Medium
